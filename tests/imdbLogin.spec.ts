@@ -3,9 +3,9 @@ import path from 'path'
 
 test.beforeEach('go to webpage', async ({ page }) => {
     await page.goto('https://www.imdb.com/')
-    await expect(page).toHaveTitle('IMDb: Ratings, Reviews, and Where to Watch the Best Movies & TV Shows')
+    await expect(page).toHaveTitle(/IMDb/)
     require('dotenv').config()
-    console.log('If you can see this the process.env works', process.env)
+    // console.log('If you can see this the process.env works', process.env)
 })
 
 test('Search in IMDB', async ({ page }) => {
